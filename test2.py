@@ -6,7 +6,7 @@ from pandas.io.json import json_normalize
 
 url = "https://store.naver.com/flights/api/realtime/international"
 
-querystring = {"Adt":"1","Chd":"0","ECITY1":"CDG","ECITY2":"ICN","FareType":"Y","Inf":"0","SCITY1":"ICN","SCITY2":"CDG","SDATE1":"2017.06.05.","SDATE2":"2017.06.11.","TRIP":"RT","Where":"mobile"}
+querystring = {"Adt":"1","Chd":"0","ECITY1":"CDG","ECITY2":"ICN","FareType":"Y","Inf":"0","SCITY1":"ICN","SCITY2":"CDG","SDATE1":"2017.07.05.","SDATE2":"2017.07.11.","TRIP":"RT","Where":"mobile"}
 
 headers = {
     'host': "store.naver.com",

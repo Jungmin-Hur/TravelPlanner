@@ -30,6 +30,12 @@ class TripService:
 
         return price_info_id
 
+    def remove_price_info(price_info_id):
+        info = PriceInfo.objects.filter(price_info_id=price_info_id)
+        # info[0].price_info_id = price_info_id + "DELETED"
+        info.delete()
+        return "SUCCESS"
+
     def search_lowest_price():
         info_list = PriceInfo.objects.all()
         # lowest_price_list = list()

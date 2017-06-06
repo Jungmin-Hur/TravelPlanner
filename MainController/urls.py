@@ -9,6 +9,7 @@ urlpatterns = [
     # url(r'^price/flightinfo/n/$', views.get_flight_price_info),
     # url(r'^price/hotelinfo/n/$', views.get_hotel_price_info),
     url(r'^price/info/msg/$', views.search_lowest_price),
+    url(r'^price/info/remove/$', views.remove_price_info),
 
     #url(r'^$', views.mcontroller_list),
     #url(r'^(?P<pk>[0-9]+)/$', views.mcontroller_detail),

@@ -15,6 +15,11 @@ def set_price_info(request, format=None):
     return Response(TripService.set_price_info(regs_id, type, querystring))
 
 @api_view(['POST'])
+def remove_price_info(request, format=None):
+    price_info_id = request.data['price_info_id']
+    return Response(TripService.remove_price_info(price_info_id))
+
+@api_view(['POST'])
 def get_flight_price_info(request, format=None):
     price_info_id = request.data['price_info_id']
     page_no = request.data['page_no'] #1페이지당 15개씩 조회처리
