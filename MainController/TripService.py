@@ -18,14 +18,14 @@ class TripService:
         price_info_id = uuid.uuid4()
         info = PriceInfo(price_info_id=price_info_id, regs_id=regs_id, type=type, querystring=querystring)
 
-        lowest_price = int(0)
-        if type == 'F':
-            # flight_url = "https://store.naver.com/flights/api/realtime/international"
-            lowest_price = get_lowest_price_from_naver_flight(querystring)
-        elif type == 'H':
-            lowest_price = get_lowest_price_from_hotels_dot_com(querystring)
-
-        info.price = lowest_price
+        # lowest_price = int(0)
+        # if type == 'F':
+        #     # flight_url = "https://store.naver.com/flights/api/realtime/international"
+        #     lowest_price = get_lowest_price_from_naver_flight(querystring)
+        # elif type == 'H':
+        #     lowest_price = get_lowest_price_from_hotels_dot_com(querystring)
+        #
+        # info.price = lowest_price
         info.save()
 
         return price_info_id
@@ -56,7 +56,7 @@ class TripService:
                 lowest_price = get_lowest_price_from_hotels_dot_com(info.querystring)
 
             # 최저가 발생
-            if price > lowest_price:
+            if price == 0 or price > lowest_price:
                 #TODO CALL GCM
                 # API_KEY = 'AIzaSyA6Px3pCas0Fi8Jlb5-aUNZTFiBmZLqeB4'
                 # gcm_return_data = {'data': 'price alarm'}
@@ -66,8 +66,6 @@ class TripService:
 
                 info.price = lowest_price
                 info.save()
-            #     lowest_price_list.append([price_info_id, regs_id])
-            # lowest_price_list.append(price_info_id)
 
         return "SUCCESS"
 

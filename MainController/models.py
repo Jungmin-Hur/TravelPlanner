@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class PriceInfo(models.Model):
+class  PriceInfo(models.Model):
 
     price_info_id = models.CharField(max_length=100)
     regs_id = models.CharField(max_length=100, default='')
